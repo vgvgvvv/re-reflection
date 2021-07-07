@@ -1,0 +1,6 @@
+#ifndef RE_REFLECTION_LIBRARY_H
+#define RE_REFLECTION_LIBRARY_H
+
+void hello();
+
+#endif //RE_REFLECTION_LIBRARY_H
