@@ -28,7 +28,14 @@ void ClassFinderCallback::onStartOfTranslationUnit() {
 }
 
 void ClassFinderCallback::onEndOfTranslationUnit() {
-  
+
+  std::error_code ec;
+  llvm::raw_fd_ostream os(fileName, ec);
+  assert(!ec && "error opening file");
+
+  for (auto &ref : classes) {
+    ref.Generate(context, os);
+  }
 }
 
 void ClassFinderCallback::FoundRecord(CXXRecordDecl const *record) {
