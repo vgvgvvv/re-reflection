@@ -8,11 +8,13 @@ set(LLVM_LINK_COMPONENTS Support)
 
 ReMake_ExpandSources(sources .)
 
-add_clang_executable(metareflect
+set(targetName re-reflection-tool)
+
+add_clang_executable(${targetName}
     ${sources}
 )
 
-target_link_libraries(metareflect
+target_link_libraries(${targetName}
     PRIVATE
     clangTooling
     clangBasic
