@@ -17,5 +17,8 @@ include(Init)
 
 ReMake_InitProject()
 
-ReMake_AddSubDirSrec(ReReflection)
-ReMake_AddSubDirSrec(ReReflectionTool)
+include_directories(ReReflection)
+include_directories(ReReflectionTool)
+
+add_subdirectory(ReReflection)
+add_subdirectory(ReReflectionTool)
