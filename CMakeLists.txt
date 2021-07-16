@@ -17,6 +17,8 @@ include(Init)
 
 ReMake_InitProject()
 
+ReMake_AddSubDirSrec(ReReflection)
+
 ReMake_AddTarget(
         TARGET_NAME Re-reflection
         MODE STATIC
