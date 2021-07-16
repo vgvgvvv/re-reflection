@@ -1,4 +1,5 @@
 cmake_minimum_required(VERSION 3.19)
+
 project(Re-reflection)
 
 set(CMAKE_CXX_STANDARD 14)
@@ -15,10 +16,12 @@ message(STATUS "re-cmake_SOURCE_DIR ${re-cmake_SOURCE_DIR}")
 list(APPEND CMAKE_MODULE_PATH "${re-cmake_SOURCE_DIR}")
 include(Init)
 
+message(STATUS "Init Re-Reflection Project")
 ReMake_InitProject()
-
-include_directories(ReReflection)
-include_directories(ReReflectionTool)
 
 add_subdirectory(ReReflection)
 add_subdirectory(ReReflectionTool)
+
+
+
+

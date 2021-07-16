@@ -6,12 +6,16 @@ endif()
 
 set(LLVM_LINK_COMPONENTS Support)
 
-ReMake_ExpandSources(sources .)
-
 set(targetName re-reflection-tool)
 
 add_clang_executable(${targetName}
-    ${sources}
+    re_reflection_tool.cpp
+    reflected_class.cpp
+    reflected_class.h
+    util.cpp
+    util.h
+    class_finder.h
+    class_finder.cpp
 )
 
 target_link_libraries(${targetName}
@@ -19,5 +23,4 @@ target_link_libraries(${targetName}
     clangTooling
     clangBasic
     clangASTMatchers
-    re-reflection
 )
