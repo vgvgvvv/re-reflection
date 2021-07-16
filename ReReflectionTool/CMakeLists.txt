@@ -19,4 +19,5 @@ target_link_libraries(${targetName}
     clangTooling
     clangBasic
     clangASTMatchers
+    re-reflection
 )
