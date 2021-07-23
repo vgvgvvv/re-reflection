@@ -12,7 +12,7 @@ void ClassFinderCallback::run(const MatchFinder::MatchResult &Result) {
   }
 
   const auto field = Result.Nodes.getNodeAs<FieldDecl>("id");
-  if (record) {
+  if (field) {
     return FoundField(field);
   }
 
