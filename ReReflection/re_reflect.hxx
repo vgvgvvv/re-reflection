@@ -14,14 +14,14 @@ namespace re_reflect
 /* Reflect Macros                                                            */
 /* ========================================================================= */
 #ifdef USING_REFECTION
-    #define CLASS(...) class __attribute__((annotate("reflect-class;" #__VA_ARGS__)))
-    #define UNION(...) union __attribute__((annotate("reflect-class;" #__VA_ARGS__)))
+    #define CLASS(...) __attribute__((annotate("reflect-class;" #__VA_ARGS__)))
+    #define UNION(...) __attribute__((annotate("reflect-class;" #__VA_ARGS__)))
     #define PROPERTY(...) __attribute__((annotate("reflect-property;" #__VA_ARGS__)))
     #define FUNCTION(...) __attribute__((annotate("reflect-function;" #__VA_ARGS__)))
     #define META_OBJECT
 #else /* else USING_REFECTION */
-    #define CLASS(...) class
-    #define UNION(...) union
+    #define CLASS(...) 
+    #define UNION(...) 
     #define PROPERTY(...)
     #define FUNCTION(...)
     #define META_OBJECT \
