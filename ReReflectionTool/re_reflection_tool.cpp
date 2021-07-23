@@ -32,11 +32,11 @@ int main(int argc, const char** argv)
 
   static DeclarationMatcher const fieldMatcher =
       fieldDecl(decl().bind("id"), hasAttr(attr::Annotate));
-  matchFinder.addMatcher(classMatcher, &classFinderCallback);
+  matchFinder.addMatcher(fieldMatcher, &classFinderCallback);
 
   static DeclarationMatcher const functionMatcher =
       functionDecl(decl().bind("id"), hasAttr(attr::Annotate));
-  matchFinder.addMatcher(classMatcher, &classFinderCallback);
+  matchFinder.addMatcher(functionMatcher, &classFinderCallback);
 
   return tool.run(newFrontendActionFactory(&matchFinder).get());
 }
