@@ -19,9 +19,13 @@ include(Init)
 message(STATUS "Init Re-Reflection Project")
 ReMake_InitProject()
 
-add_subdirectory(ReReflection)
-add_subdirectory(ReReflectionTool)
+IsRootProject(IsRootProject)
 
+
+if(${IsRootProject})
+    add_subdirectory(ReReflection)
+    add_subdirectory(ReReflectionTool)
+endif()
 
 
 
