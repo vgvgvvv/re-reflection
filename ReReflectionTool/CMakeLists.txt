@@ -1,5 +1,5 @@
 
-# Èç¹û¶¨ÒåÁË add_clang_executable ²Å»á¹¹½¨
+# ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ add_clang_executable ï¿½Å»á¹¹ï¿½ï¿½
 if(NOT COMMAND add_clang_executable)
     return()
 endif()
@@ -16,6 +16,10 @@ add_clang_executable(${targetName}
     util.h
     class_finder.h
     class_finder.cpp
+    annotations.h
+    annotations.cpp
+    fieldgenerator.h
+    functiongenerator.h
 )
 
 target_link_libraries(${targetName}
