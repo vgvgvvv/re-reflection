@@ -40,7 +40,8 @@ void ClassFinderCallback::onEndOfTranslationUnit() {
 
 void ClassFinderCallback::FoundRecord(CXXRecordDecl const *record) {
   fileName = std::string(sourceManager->getFilename(record->getLocation()));
-  fileName.erase(fileName.end() - 4, fileName.end());
+  fileName.erase(std::find(fileName.begin(), fileName.end(), '.'),
+                 fileName.end());
   fileName.append(".reflected.h");
   classes.emplace_back(ReflectedClass(record));
 }

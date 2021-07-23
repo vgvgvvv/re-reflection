@@ -12,8 +12,8 @@ void ReflectedClass::Generate(ASTContext *ctx, raw_ostream &os) {
   /* File header: */
   os << "/* this file is auto-generated. do not edit! */\n";
   os << "#pragma once\n";
-  os << "#include \"metareflect.hxx\"\n";
-  os << "namespace metareflect\n{\n\n";
+  os << "#include \"re_reflect.hxx\"\n";
+  os << "namespace re_reflect\n{\n\n";
 
   SmallVector<PropertyAnnotations, 8> propertyAnnotations;
   SmallVector<FunctionAnnotations, 8> functionAnnotations;
@@ -122,7 +122,7 @@ void ReflectedClass::Generate(ASTContext *ctx, raw_ostream &os) {
      << "}\n";
 
   os << "} /* namespace detail */\n";
-  os << "} /* namespace metareflect */\n\n";
+  os << "} /* namespace re_reflect */\n\n";
 }
 
 void ReflectedClass::AddField(FieldDecl const *field) {
